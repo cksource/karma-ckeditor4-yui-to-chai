@@ -1,3 +1,8 @@
+/**
+ * @license Copyright (c) 2017, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md.
+ */
+
 var path = require( 'path' );
 
 function loadAsserts( files ) {
