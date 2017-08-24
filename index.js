@@ -3,6 +3,8 @@
  * For licensing, see LICENSE.md.
  */
 
+'use strict';
+
 var path = require( 'path' );
 
 function loadAsserts( files ) {

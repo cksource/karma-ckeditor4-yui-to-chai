@@ -3,6 +3,8 @@
  * For licensing, see LICENSE.md.
  */
 
+/* jshint browser: true, node: false */
+
 ( function( window, chai ) {
 	'use strict';
 
