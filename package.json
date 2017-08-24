@@ -1,11 +1,14 @@
 {
-  "name": "karma-ckeditor4-yui-to-chai",
-  "version": "0.0.1",
-  "description": "Karma plugins which replaces YUI asserts with Chai ones in the global scope. It makes possible to run tests written with YUI assertions to have nice Chai reporting style.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "karma-ckeditor4-yui-to-chai",
+	"version": "0.0.1",
+	"description": "Adapter for running old YUI-based CKEditor 4 tests with Chai in Karma.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "CKSource (http://cksource.com/)",
+	"license": "MIT",
+	"dependencies": {
+		"chai": "^4.1.1"
+	}
 }

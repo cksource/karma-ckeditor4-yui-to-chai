@@ -3,36 +3,38 @@
  * For licensing, see LICENSE.md.
  */
 
-( function( window ) {
-    'use strict';
+( function( window, chai ) {
+	'use strict';
 
-    window.assert = {
-        isInstanceOf: function( type, actual, msg ) {
-            assert.instanceOf( actual, type, msg );
-        },
+	var assert = chai.assert;
 
-        areSame: function( expected, actual, msg ) {
-            assert.equal( actual, expected, msg );
-        },
+	window.assert = {
+		isInstanceOf: function( type, actual, msg ) {
+			assert.instanceOf( actual, type, msg );
+		},
 
-        areNotSame: function( expected, actual, msg ) {
-            assert.notEqual( actual, expected, msg );
-        }
-    };
+		areSame: function( expected, actual, msg ) {
+			assert.equal( actual, expected, msg );
+		},
 
-    window.arrayAssert = {
-        itemsAreSame: function( expected, actual, msg ) {
-            assert.deepEqual( actual, expected, msg );
-        },
+		areNotSame: function( expected, actual, msg ) {
+			assert.notEqual( actual, expected, msg );
+		}
+	};
 
-        itemsAreEqual: function( expected, actual, msg ) {
-            assert.deepEqual( actual, expected, msg );
-        }
-    };
+	window.arrayAssert = {
+		itemsAreSame: function( expected, actual, msg ) {
+			assert.deepEqual( actual, expected, msg );
+		},
 
-    window.objectAssert = {
-        areEqual: function( expected, actual, msg ) {
-            assert.deepEqual( actual, expected, msg );
-        }
-    };
-} )( window );
+		itemsAreEqual: function( expected, actual, msg ) {
+			assert.deepEqual( actual, expected, msg );
+		}
+		};
+
+		window.objectAssert = {
+		areEqual: function( expected, actual, msg ) {
+			assert.deepEqual( actual, expected, msg );
+		}
+	};
+} )( window, chai );
