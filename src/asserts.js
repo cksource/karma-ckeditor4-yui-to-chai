@@ -8,10 +8,23 @@
 
 	var assert = chai.assert;
 
+	// TODO Can be done in more automatic way.
 	window.assert = {
 		isInstanceOf: function( type, actual, msg ) {
 			assert.instanceOf( actual, type, msg );
 		},
+
+		isString: assert.isString,
+
+		isNumber: assert.isNumber,
+
+		isTrue: assert.isTrue,
+
+		isObject: assert.isObject,
+
+		isNull: assert.isNull,
+
+		isFalse: assert.isFalse,
 
 		areSame: function( expected, actual, msg ) {
 			assert.equal( actual, expected, msg );
