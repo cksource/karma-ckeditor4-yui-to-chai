@@ -26,6 +26,8 @@
 
 		isNull: assert.isNull,
 
+		isNotNull: assert.isNotNull,
+
 		isFalse: assert.isFalse,
 
 		areSame: function( expected, actual, msg ) {
