@@ -3,7 +3,9 @@
  * For licensing, see LICENSE.md.
  */
 
-/* jshint browser: true, node: false */
+/* global chai */
+/* eslint-env browser */
+/* eslint no-var: 0, object-shorthand: 0 */
 
 ( function( window, chai ) {
 	'use strict';
@@ -12,9 +14,6 @@
 
 	// TODO Can be done in more automatic way.
 	window.assert = {
-		isInstanceOf: function( type, actual, msg ) {
-			assert.instanceOf( actual, type, msg );
-		},
 
 		isString: assert.isString,
 
@@ -29,6 +28,16 @@
 		isNotNull: assert.isNotNull,
 
 		isFalse: assert.isFalse,
+
+		isUndefined: assert.isUndefined,
+
+		isInstanceOf: function( type, actual, msg ) {
+			assert.instanceOf( actual, type, msg );
+		},
+
+		throwsError: function( type, fn, msg ) {
+			assert.throws( fn, type, msg );
+		},
 
 		areSame: function( expected, actual, msg ) {
 			assert.equal( actual, expected, msg );
@@ -47,11 +56,11 @@
 		itemsAreEqual: function( expected, actual, msg ) {
 			assert.deepEqual( actual, expected, msg );
 		}
-		};
+	};
 
-		window.objectAssert = {
+	window.objectAssert = {
 		areEqual: function( expected, actual, msg ) {
 			assert.deepEqual( actual, expected, msg );
 		}
 	};
-} )( window, chai );
+} ( window, chai ) );

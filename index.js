@@ -5,7 +5,7 @@
 
 'use strict';
 
-var path = require( 'path' );
+const path = require( 'path' );
 
 function loadAsserts( files ) {
 	files.unshift( {
