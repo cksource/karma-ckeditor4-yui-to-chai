@@ -1,13 +1,21 @@
 {
 	"name": "karma-ckeditor4-yui-to-chai",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "Adapter for running old YUI-based CKEditor 4 tests with Chai in Karma.",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cksource/karma-ckeditor4-yui-to-chai"
+	},
 	"author": "CKSource (http://cksource.com/)",
 	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/cksource/karma-ckeditor4-yui-to-chai/issues"
+	},
+	"homepage": "https://github.com/cksource/karma-ckeditor4-yui-to-chai#readme",
 	"dependencies": {
 		"chai": "^4.1.1"
 	}
