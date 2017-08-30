@@ -7,6 +7,13 @@
 
 const path = require( 'path' );
 
+/**
+ * Adds `src/asserts.js` and `chai.js` file paths to files array which results
+ * in Karma including them in the test context.
+ *
+ * @param {Array} files Array of files loaded by Karma.
+ * @returns {undefined} undefined
+ */
 function loadAsserts( files ) {
 	files.unshift( {
 		pattern: path.join( __dirname, 'src/asserts.js' ),
