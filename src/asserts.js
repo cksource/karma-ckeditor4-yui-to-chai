@@ -31,6 +31,10 @@
 
 		isUndefined: assert.isUndefined,
 
+		fail: function( msg ) {
+			assert.fail( null, null, msg );
+		},
+
 		isInstanceOf: function( type, actual, msg ) {
 			assert.instanceOf( actual, type, msg );
 		},
