@@ -3,7 +3,7 @@
  * For licensing, see LICENSE.md.
  */
 
-/* global chai */
+/* global chai, CKEDITOR */
 /* eslint-env browser */
 /* eslint no-var: 0, object-shorthand: 0 */
 
@@ -11,6 +11,14 @@
 	'use strict';
 
 	var assert = chai.assert;
+
+	function compareNativeElements( assert, expected, actual, msg ) {
+		if ( expected instanceof CKEDITOR.dom.node && actual instanceof CKEDITOR.dom.node ) {
+			assert( actual.$, expected.$, msg );
+		} else {
+			assert( actual, expected, msg );
+		}
+	}
 
 	// TODO Can be done in more automatic way.
 	window.assert = {
@@ -44,11 +52,11 @@
 		},
 
 		areSame: function( expected, actual, msg ) {
-			assert.equal( actual, expected, msg );
+			compareNativeElements( assert.equal, expected, actual, msg );
 		},
 
 		areNotSame: function( expected, actual, msg ) {
-			assert.notEqual( actual, expected, msg );
+			compareNativeElements( assert.notEqual, expected, actual, msg );
 		}
 	};
 
