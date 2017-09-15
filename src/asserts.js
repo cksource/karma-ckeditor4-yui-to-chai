@@ -20,6 +20,13 @@
 		}
 	}
 
+	function htmlCollectionToArray( htmlCollection ) {
+		if ( htmlCollection instanceof HTMLCollection ) {
+			return Array.prototype.slice.call( htmlCollection );
+		}
+		return htmlCollection;
+	}
+
 	// TODO Can be done in more automatic way.
 	window.assert = {
 
@@ -39,6 +46,8 @@
 
 		isUndefined: assert.isUndefined,
 
+		isArray: assert.isArray,
+
 		fail: function( msg ) {
 			assert.fail( null, null, msg );
 		},
@@ -49,6 +58,14 @@
 
 		throwsError: function( type, fn, msg ) {
 			assert.throws( fn, type, msg );
+		},
+
+		areEqual: function( expected, actual, msg ) {
+			compareNativeElements( assert.equal, expected, actual, msg );
+		},
+
+		areNotEqual: function( expected, actual, msg ) {
+			compareNativeElements( assert.notEqual, expected, actual, msg );
 		},
 
 		areSame: function( expected, actual, msg ) {
@@ -66,7 +83,13 @@
 		},
 
 		itemsAreEqual: function( expected, actual, msg ) {
-			assert.deepEqual( actual, expected, msg );
+			// Some unit tests passes HTMLCollection instead of an array. It worked with YUI, however Chai
+			// does a strict checking so we need to convert HTMLCollection to array.
+			assert.sameDeepOrderedMembers( htmlCollectionToArray( actual ), expected, msg );
+		},
+
+		isEmpty: function( actual, msg ) {
+			assert.isEmpty( actual, msg );
 		}
 	};
 
