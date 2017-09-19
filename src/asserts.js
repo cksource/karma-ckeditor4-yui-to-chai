@@ -48,6 +48,20 @@
 
 		isArray: assert.isArray,
 
+		isNumberInRange: function( expected, min, max, message ) {
+			assert.isNumber( expected, 'Expected value should be number type.' );
+			assert.isNumber( min, 'Min value should be number type.' );
+			assert.isNumber( max, 'Max value should be number type.' );
+
+			assert.isAbove( max, min, 'Min value is greater or equal than max.' );
+			assert.isAbove( expected, min, message );
+			assert.isBelow( expected, max, message );
+		},
+
+		isMatching: function( expected, actual, msg ) {
+			assert.match( actual, expected, msg );
+		},
+
 		fail: function( msg ) {
 			assert.fail( null, null, msg );
 		},
