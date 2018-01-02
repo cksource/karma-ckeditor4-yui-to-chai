@@ -48,6 +48,8 @@
 
 		isArray: assert.isArray,
 
+		isFunction: assert.isFunction,
+
 		isNumberInRange: function( expected, min, max, message ) {
 			assert.isNumber( expected, 'Expected value should be number type.' );
 			assert.isNumber( min, 'Min value should be number type.' );
