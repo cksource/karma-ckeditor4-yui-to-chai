@@ -23,7 +23,7 @@ function loadAsserts( files ) {
 		nocache: false
 	} );
 	files.unshift( {
-		pattern: path.join( __dirname, 'node_modules/chai/chai.js' ),
+		pattern: require.resolve( 'chai/chai.js' ),
 		included: true,
 		served: true,
 		watched: false,
