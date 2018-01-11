@@ -50,6 +50,26 @@
 
 		isFunction: assert.isFunction,
 
+		// TODO
+		isInnerHtmlMatching: function() {
+			assert.isTrue( true );
+		},
+
+		// TODO
+		beautified: {
+			html: function() {
+				assert.isTrue( true );
+			}
+		},
+
+		pass: function( msg ) {
+			assert.isTrue( true, msg );
+		},
+
+		isTypeOf: function( type, value, msg ) {
+			assert.typeOf( value, type, msg );
+		},
+
 		isNumberInRange: function( expected, min, max, message ) {
 			assert.isNumber( expected, 'Expected value should be number type.' );
 			assert.isNumber( min, 'Min value should be number type.' );
